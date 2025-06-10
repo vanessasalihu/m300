@@ -88,6 +88,24 @@ Bis jetzt alles erledigt:
 •	Wetterdaten werden über OpenWeatherMap API angezeigt
 
 
+![alt text](<rohe WetterAPI.png>)
+
+
+
+## 27.05.2025
+
+Datenbank Instanz erstellt. Datenbankschema erstellt. 
+HTTP zu HTTPS gemacht
+
+
+## 03.06.2025
+
+User Login für Wetterapp Benutzer. Diese Login Daten werden nun in meiner Datenbank auf der EC2 DB instanz gespeichert 
+
+
+
+
+## 10.06. 2025
 
 
 
