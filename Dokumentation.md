@@ -375,6 +375,50 @@ server {
 
 ```
 
+### Monitoring
 
+Da ich keine Berechtigung hatte, IAM Rollen zu erstellen, konnte ich nicht CloudWatch verwenden. 
+
+Stattdessen habe ich PM2 auf der EC2 Instanz installiert. 
+
+
+PM2:
+- Hält die API dauerhaft am laufen
+- Startet bei Fehlern neu
+- Speichert & zeigt logs an
+
+
+
+Zuerst habe ich PM2 installiert 
+<pre>
+sudo npm install -g pm2
+</pre>
+
+Danach die API gestartet
+
+<pre>
+cd ~/weathernow-api
+pm2 start index.js --name weather-api
+</pre>
+
+
+Hier kann ich dann den Status ansehen
+
+<pre>
+pm2 status
+</pre>
+
+Da werden mir CPU, Speicherverbrauch und der Zustand der API angezeigt.
+
+![Bild](<pm2 status.png>)
+
+
+
+Damit kann man nun z.B für die Fehleranalyse bei Login / DB Problemen die Logs anzeigen
+<pre>
+pm2 logs
+</pre>
+
+![Bild](<pm2 logs.png>)
 
 
