@@ -439,6 +439,6 @@ Damit kann man nun z.B für die Fehleranalyse bei Login / DB Problemen die Logs 
 pm2 logs
 </pre>
 
-![Bild](<pm2 logs.png>)
+![Bild](/Bilder/<pm2 logs.png>)
 
 
