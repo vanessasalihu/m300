@@ -1,3 +1,5 @@
-![alt text](image-1.png)
 
-![alt text](image-2.png)
+<img src="Bilder/image-1.png" width="700" />
+
+
+<img src="Bilder/image-2.png" width="700" />

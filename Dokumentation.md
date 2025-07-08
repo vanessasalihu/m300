@@ -8,12 +8,14 @@ Ubuntu 22.04 LTS
 Ports 22 (SSH) und 80 (HTTP) in der Security Group geöffnet
 
 
-![Bild](EC2Instanz.png)
+
+<img src="Bilder/EC2Instanz.png" width="700" />
+
+1. Dann habe ich der Instanz eine fixe IP zugewiesen
 
 
-2. Dann habe ich der Instanz eine fixe IP zugewiesen
 
-![Bild](ElasticIP.png)
+<img src="Bilder/ElasticIP.png" width="700" />
 
 ### SSH 
 3. Danach habe ich mich via SSH auf meine Instanz verbunden
@@ -22,7 +24,7 @@ Ports 22 (SSH) und 80 (HTTP) in der Security Group geöffnet
 </pre>
 
 
-![Bild](sshRemote.png)
+<img src="Bilder/sshRemote.png" width="700" />
 
 ### Nginx , Node.js und npm 
 4. Danach habe ich meinen Server vorbereitet und Nginx als Webserver installiert 
@@ -47,13 +49,15 @@ sudo apt install -y nodejs
 ### RDS Datenbank in AWS
 6. Danach habe ich mit dem Dienst Aurora und RDS in AWS eine Datenbank erstellt 
 
-![Bild](RDS.png)
+
+<img src="Bilder/RDS.png" width="700" />
 
 Dabei habe ich direkt einen user ,,admin" mit Passwort und die DB ,,weathernow" erstellt
 
 ## Backup 
 
-![alt text](image-3.png)
+<img src="Bilder/image-3.png" width="700" />
+
 
 Ich wollte für meine Datenbank automatische tägliche Backups in AWS aktivieren. 
 Dabei habe ich:
@@ -88,7 +92,7 @@ CREATE TABLE users (
 
 Wichtig ist es, den Port 3306 in der entsprechenden Sicherheitsgruppe zu öffnen, damit die EC2 Instanz mit der MySQL Datenbank kommunizieren kann. 
 
-![Bild](3306.png)
+<img src="Bilder/3306.png" width="700" />
 
 
 ## Wetterdaten API
@@ -97,8 +101,8 @@ als API habe ich die openweathermap benutzt: https://home.openweathermap.org/
 
 Dort habe ich ein Benutzerkonto erstellt und anschliessend den API Key generiert und kopiert.
 
-![Bild](weathermapAPI.png)
 
+<img src="Bilder/weathermapAPI.png" width="700" />
 
 
 ## Backend
@@ -173,7 +177,7 @@ app.listen(3000, '0.0.0.0', () => console.log('API läuft auf Port 3000'));
 
 Damit das Node.js backend von aussen erreichbar ist, habe ich noch den Port 3000 freigeschaltet
 
-![Bild](3000.png)
+<img src="Bilder/3000.png" width="700" />
 
 
 ## Frontend
@@ -241,7 +245,7 @@ export default function HomePage() {
 ```
 
 #### Browseransicht:
-![Bild](HomePage.png)
+<img src="Bilder/HomePage.png" width="700" />
 
 ./src/LoginForm.jsx
 
@@ -300,14 +304,16 @@ export default function LoginForm() {
 
 #### bei nicht erfolgreichem Login:
 
-![Bild](noErfolg.png)
+<img src="Bilder/noErfolg.png" width="700" />
 
 #### bei erfolgreichem Login:
-![Bild](Erfolg.png)
 
-
+<img src="Bilder/Erfolg.png" width="700" />
 #### wenn node.js nicht läuft ist Server nicht erreichbar
-![Bild](nichtErfolg.png)
+
+
+<img src="Bilder/nichtErfolg.png" width="700" />
+
 
 
 
@@ -319,7 +325,8 @@ wenn ich nun in meine DB gehe, erscheinen die Registrierungsdaten in der DB
 <pre>mysql -h weathernow-db.cqqr9mkqilvl.us-east-1.rds.amazonaws.com -u admin -p
 </pre>
 
-![Bild](LoginDaten.png)
+
+<img src="Bilder/LoginDaten.png" width="700" />
 
 
 
@@ -430,8 +437,8 @@ pm2 status
 
 Da werden mir CPU, Speicherverbrauch und der Zustand der API angezeigt.
 
-![Bild](<pm2 status.png>)
 
+<img src="Bilder/pm2 status.png" width="700" />
 
 
 Damit kann man nun z.B für die Fehleranalyse bei Login / DB Problemen die Logs anzeigen
@@ -439,6 +446,7 @@ Damit kann man nun z.B für die Fehleranalyse bei Login / DB Problemen die Logs 
 pm2 logs
 </pre>
 
-![Bild](/Bilder/<pm2 logs.png>)
+![Bild](/Bilder/pm2 logs.png)
 
 
+<img src="Bilder/pm2 logs.png" width="700" />
