@@ -1,4 +1,4 @@
-### Dokumentation
+# Dokumentation
 
 ### EC2 Instanz in AWS
 Als erstes habe ich meine EC2 Instanz erstellt im AWS
@@ -51,6 +51,26 @@ sudo apt install -y nodejs
 
 Dabei habe ich direkt einen user ,,admin" mit Passwort und die DB ,,weathernow" erstellt
 
+## Backup 
+
+![alt text](image-3.png)
+
+Ich wollte für meine Datenbank automatische tägliche Backups in AWS aktivieren. 
+Dabei habe ich:
+
+- die Aufbewahrung auf 1 Tag gesetzt
+
+- ein Zeitfenster für das Backup gewählt
+
+- das Kopieren von Tags aktiviert
+
+Automatische Backups funktionieren nur mit der InnoDB-Speicher-Engine.
+Meine Tabelle ist aber mit MyISAM gemacht, deshalb geht es nicht automatisch.
+
+### Lösungsidee: ###
+Ich könnte die Tabelle auf InnoDB umstellen oder ein eigenes Backup mit mysqldump und einem Cronjob machen.
+
+### RDS Datenbank in AWS
 Danach habe ich mich folgendermassen von meiner EC2 Instanz aus auf meine DB connectet mit meinem Endpoint der RDS:
 
 <pre> mysql -h weathernow-db.cqqr9mkqilvl.us-east-1.rds.amazonaws.com -u admin -p
